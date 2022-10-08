@@ -16,7 +16,7 @@ def load_image():
         return None
 
 def load_model():
-	model = tf.keras.models.load_model("C:\\Users\\visha\\Documents\\Applied AI & ML Diploma\\Hindi Character Recognition\\HCR-CNN.h5")
+	model = tf.keras.models.load_model("HCR-CNN.h5")
 	return model
 
 
@@ -31,7 +31,6 @@ def main():
         image = cv2.resize(image, (32,32))
         image = image.astype("float")/255.0
         print(image.shape)
-        #image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         image = np.expand_dims(image, axis=0)
         image = np.expand_dims(image, axis=3)
     result = st.button('Predict')
