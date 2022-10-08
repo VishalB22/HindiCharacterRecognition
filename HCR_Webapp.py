@@ -10,7 +10,7 @@ def load_image():
     uploaded_file = st.file_uploader(label='')
     if uploaded_file is not None:
         image_data = uploaded_file.getvalue()
-        st.image(image_data)
+        st.image(image_data,,width = 200)
         return Image.open(io.BytesIO(image_data))
     else:
         return None
@@ -23,7 +23,7 @@ def load_model():
 def main():
     st.title('Hindi Character Recognition')
     labels =['yna', 't`aa', 't`haa', 'd`aa', 'd`haa', 'a`dna', 'ta', 'tha', 'da', 'dha', 'ka', 'na', 'pa', 'pha', 'ba', 'bha', 'ma', 'yaw', 'ra', 'la', 'waw', 'kha', 'sha', 'shat', 'sa', 'ha', 'aksha', 'tra', 'gya', 'ga', 'gha', 'kna', 'cha', 'chha', 'ja', 'jha', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    st.header("Please upload you hindi character image to predict")
+    st.subheader("Please upload you hindi character image to predict")
     up_image = load_image()
     model = load_model()
     if up_image:
